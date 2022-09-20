@@ -27,7 +27,7 @@ namespace EntityDiscover092022
         {
             services.AddControllersWithViews();
             services.AddDbContext<UserDbContext>(context =>
-                context.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EntityDiscover;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+                context.UseLazyLoadingProxies().UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EntityDiscover;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

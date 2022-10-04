@@ -1,0 +1,24 @@
+﻿@model List<Voiture>
+
+<h1>Coucou on est dans le contrôleur Voitures</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Chevaux</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var voiture in Model){
+            <tr>
+                <td>@voiture.Id</td>
+                <td>@voiture.Name</td>
+                <td>@voiture.NbChevaux</td>
+                <td><a asp-controller="Voitures" asp-action="Detail" asp-route-idVoiture="@voiture.Id">Détail</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

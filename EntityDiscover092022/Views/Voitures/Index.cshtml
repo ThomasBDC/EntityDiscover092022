@@ -2,6 +2,8 @@
 
 <h1>Coucou on est dans le contrôleur Voitures</h1>
 
+<a asp-action="Create">Créer une voiture</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -17,7 +19,13 @@
                 <td>@voiture.Id</td>
                 <td>@voiture.Name</td>
                 <td>@voiture.NbChevaux</td>
-                <td><a asp-controller="Voitures" asp-action="Detail" asp-route-idVoiture="@voiture.Id">Détail</a></td>
+                <td>
+                    <a asp-controller="Voitures" asp-action="Detail" asp-route-idVoiture="@voiture.Id">Détail</a>
+                    |
+                    <a asp-controller="Voitures" asp-action="Edit" asp-route-id="@voiture.Id">Modifier</a>
+                    |
+                    <a asp-controller="Voitures" asp-action="Delete" asp-route-id="@voiture.Id">Supprimer</a>
+                </td>
             </tr>
         }
     </tbody>
